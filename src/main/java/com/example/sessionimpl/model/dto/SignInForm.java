@@ -1,4 +1,4 @@
-package com.example.sessionimpl.domain.dto;
+package com.example.sessionimpl.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

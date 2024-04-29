@@ -1,6 +1,6 @@
-package com.example.sessionimpl.domain.repository;
+package com.example.sessionimpl.repository;
 
-import com.example.sessionimpl.domain.User;
+import com.example.sessionimpl.model.User;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

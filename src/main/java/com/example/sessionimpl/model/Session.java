@@ -1,11 +1,12 @@
-package com.example.sessionimpl.domain;
+package com.example.sessionimpl.model;
 
-import com.example.sessionimpl.domain.dto.SignUpForm;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,23 +16,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Builder
 @Getter
-public class User {
+@Builder
+public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private String email;
     @Column(nullable = false)
-    private String password;
+    private Long userId;
 
-    public static User from(SignUpForm form){
-        return User.builder()
-            .email(form.getEmail())
-            .password(form.getPassword())
-            .build();
-    }
+    @Column(nullable = false)
+    private String key;
+    private LocalDateTime expiresAt;
 }
